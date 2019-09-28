@@ -33,7 +33,9 @@ open class LocationMessageCell: MessageContentCell {
 
     /// The image view holding the map image.
     open var imageView = UIImageView()
-    
+
+    open var locationCoordinate: CLLocationCoordinate2D?
+
     private weak var snapShotter: MKMapSnapshotter?
 
     open override func setupSubviews() {
@@ -69,6 +71,7 @@ open class LocationMessageCell: MessageContentCell {
         activityIndicator.startAnimating()
 
         let snapshotOptions = MKMapSnapshotter.Options()
+        locationCoordinate = locationItem.location.coordinate
         snapshotOptions.region = MKCoordinateRegion(center: locationItem.location.coordinate, span: options.span)
         snapshotOptions.showsBuildings = options.showsBuildings
         snapshotOptions.showsPointsOfInterest = options.showsPointsOfInterest
