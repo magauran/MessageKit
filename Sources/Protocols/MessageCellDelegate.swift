@@ -149,6 +149,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
     func didStopAudio(in cell: AudioMessageCell)
 
+    func didTapActionButton(with action: String)
 }
 
 public extension MessageCellDelegate {
@@ -177,4 +178,5 @@ public extension MessageCellDelegate {
     
     func didTapAccessoryView(in cell: MessageCollectionViewCell) {}
 
+    func didTapActionButton(with action: String) {}
 }
