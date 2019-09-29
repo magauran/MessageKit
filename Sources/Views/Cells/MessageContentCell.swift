@@ -258,7 +258,7 @@ open class MessageContentCell: MessageCollectionViewCell {
         case .cellTrailing:
             origin.x = attributes.frame.width - attributes.avatarSize.width - attributes.messageContainerSize.width - attributes.messageContainerPadding.right - avatarPadding
         case .natural:
-            fatalError(MessageKitError.avatarPositionUnresolved)
+            ()
         }
 
         messageContainerView.frame = CGRect(origin: origin, size: attributes.messageContainerSize)
